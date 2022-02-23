@@ -10,17 +10,16 @@
 Provide an original solution, do not use someone else's code.  Violating this rule will result in disqualification from the candidate assessment process.
 Please complete this code challenge.  Provide a link to a repository containing your solution, or a zip file.
 
-### - -------------------------------------- Solution-------------------------------------------------------
+### - -------------------------------------- Solution--------------------------------------------
 ### Growers Project
 - Contain growers file parser is a program that accept file as input and 
 - Output the total number of occurrences of the "search parameter", and the total number of replacements
 
-  - Important Note
-    - This program does not support apostrophe
-  
-
 ## Running the app locally
 - Open your terminal and `cd` to the project `root` directory.
 - Create a file for example: `input.txt` with any paragraph with words.
-- Run `python3 searchAndReplace.py input.txt` where `input.txt` is the parameter input file.
+- Run `python3 searchAndReplace.py file.txt searchWord replaceWith`
+- `file.txt` is the input file, 
+- `searchWord` is the word you are looking for in the file, 
+- `replaceWith` is the word to replace the search word with
 - There you have it.

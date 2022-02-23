@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import re
 import fileinput
 import argparse
 
@@ -9,17 +10,18 @@ def searchAndReplace(filepath,search,replace):
 
     with fileinput.FileInput(filepath, inplace=True, backup='.bak') as file:
         for line in file:
-            if search in line:
+            #matches = re.search(search,line,re.IGNORECASE)
+            matches = re.findall(r"(?:^|(?<=\s))"+search,line,flags=re.IGNORECASE)
+            if matches:
                 counter+=1
                 print(line.replace(search,replace), end='')
-
 
     return counter
 
 
 def main():
+    # python3 growers_file_parser.py file.txt searchWord replaceWith
     parser = argparse.ArgumentParser(description='Search and replace from a text file.')
-
     parser.add_argument('filepath', type=str)
     parser.add_argument('search', type=str)
     parser.add_argument('replace', type=str)
